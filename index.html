@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Modern Weather Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i data-lucide="cloud-sun"></i>
+                <h1>SkyCast</h1>
+            </div>
+            <div class="header-controls">
+                <button id="geo-btn" class="icon-btn" aria-label="Use current location" title="Use Current Location">
+                    <i data-lucide="map-pin"></i>
+                </button>
+                <div class="unit-toggle">
+                    <input type="radio" id="celsius" name="temp-unit" value="metric" checked>
+                    <label for="celsius">°C</label>
+                    <input type="radio" id="fahrenheit" name="temp-unit" value="imperial">
+                    <label for="fahrenheit">°F</label>
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="city-input" placeholder="Search for a city..." aria-label="City search input" autocomplete="off">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div id="error-message" class="error-message hidden">
+                    <i data-lucide="alert-circle"></i>
+                    <span id="error-text">City not found. Please try again.</span>
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading-container hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <!-- Weather Dashboard -->
+            <section id="weather-dashboard" class="weather-dashboard hidden">
+                
+                <!-- Current Weather -->
+                <div class="current-weather card glass">
+                    <div class="location-info">
+                        <h2 id="city-name">--</h2>
+                        <p id="current-date">--</p>
+                    </div>
+                    <div class="temp-container">
+                        <div class="weather-icon-wrapper">
+                            <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
+                        </div>
+                        <div class="temp-info">
+                            <h3 id="current-temp" class="temperature">--°</h3>
+                            <p id="weather-condition" class="condition">--</p>
+                            <p class="feels-like">Feels like <span id="feels-like">--°</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Details Grid -->
+                <div class="weather-details">
+                    <div class="detail-card glass">
+                        <div class="detail-header">
+                            <i data-lucide="droplets"></i>
+                            <span>Humidity</span>
+                        </div>
+                        <p id="humidity" class="detail-value">--%</p>
+                    </div>
+                    
+                    <div class="detail-card glass">
+                        <div class="detail-header">
+                            <i data-lucide="wind"></i>
+                            <span>Wind Speed</span>
+                        </div>
+                        <p id="wind-speed" class="detail-value">--</p>
+                    </div>
+
+                    <div class="detail-card glass">
+                        <div class="detail-header">
+                            <i data-lucide="thermometer"></i>
+                            <span>Min / Max</span>
+                        </div>
+                        <p id="min-max-temp" class="detail-value">--° / --°</p>
+                    </div>
+
+                    <div class="detail-card glass">
+                        <div class="detail-header">
+                            <i data-lucide="sunrise"></i>
+                            <span>Sunrise</span>
+                        </div>
+                        <p id="sunrise-time" class="detail-value">--:--</p>
+                    </div>
+
+                    <div class="detail-card glass">
+                        <div class="detail-header">
+                            <i data-lucide="sunset"></i>
+                            <span>Sunset</span>
+                        </div>
+                        <p id="sunset-time" class="detail-value">--:--</p>
+                    </div>
+                </div>
+
+                <!-- 5-Day Forecast -->
+                <div class="forecast-section card glass">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be injected here via JS -->
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        
+        <footer>
+            <p>Data provided by OpenWeatherMap</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
