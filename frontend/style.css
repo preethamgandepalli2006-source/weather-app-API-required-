@@ -1,0 +1,588 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #03152f;
+  color: #f4f8ff;
+}
+/* HEADER */
+
+.header {
+  background: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 8px #00000012;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 12px;
+  border: 1px solid #ccd5e3;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 210px;
+}
+
+button {
+  border: none;
+  background: #1765d1;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #0d4fae;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* MAIN */
+
+.container {
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 0 20px;
+}
+
+/* WEATHER SUMMARY */
+
+.weather-summary {
+  background: #082b59;
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid #145da0;
+}
+
+.weather-main h1 {
+  font-size: 55px;
+  margin: 15px 0;
+}
+
+.weather-main p {
+  font-size: 18px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 340px;
+}
+
+.detail-card {
+  background: #06244b;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-card strong {
+  font-size: 18px;
+}
+
+/* MAP */
+
+.map-section {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.map-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.map-heading h2 {
+  font-size: 22px;
+}
+
+.map-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#weatherMap {
+  width: 100%;
+  height: 550px;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.map-note {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* SUGGESTION */
+
+.suggestion-section {
+  margin-top: 25px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+}
+
+.suggestion-section h2 {
+  margin-bottom: 15px;
+}
+
+#suggestion {
+  background: #eaf4ff;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* FORECAST */
+
+.forecast-section {
+  margin-top: 25px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+}
+
+.forecast-section h2 {
+  margin-bottom: 20px;
+}
+
+#forecastContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.forecast-card {
+  background: #f0f5fc;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.forecast-card .temp {
+  font-weight: bold;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    flex-wrap: wrap;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .weather-summary {
+    flex-direction: column;
+  }
+
+  .weather-details {
+    width: 100%;
+  }
+
+  #weatherMap {
+    height: 400px;
+  }
+
+  #forecastContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+/* CLIMATE 365 BRAND */
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #16c9e8;
+}
+
+.logo p {
+  font-size: 14px;
+  font-weight: normal;
+  color: #a8c5e8;
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+
+/* ==================================
+   CLIMATE 365 - TEXT VISIBILITY FIX
+================================== */
+
+/* Main page */
+
+body {
+  background: #03152f;
+  color: #ffffff;
+}
+
+
+/* HEADER */
+
+.header {
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+.logo {
+  color: #0b1f3a !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00a9d6;
+}
+
+.logo p {
+  color: #526780 !important;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+
+/* WEATHER CARD */
+
+.weather-summary {
+  background: #082b59;
+  color: #ffffff;
+  border: 1px solid #145da0;
+}
+
+.weather-main p,
+.weather-main h1 {
+  color: #ffffff;
+}
+
+
+/* WEATHER DETAILS */
+
+.detail-card {
+  background: #061e40;
+  color: #ffffff;
+}
+
+.detail-card span {
+  color: #b9d9ff;
+}
+
+.detail-card strong {
+  color: #ffffff;
+}
+
+
+/* MAP SECTION */
+
+.map-section {
+  background: #08264d;
+  color: #ffffff;
+  border: 1px solid #145da0;
+}
+
+.map-section h2 {
+  color: #ffffff;
+}
+
+.map-note {
+  color: #c4d9f5;
+}
+
+
+/* SMART WEATHER INSIGHT */
+
+.suggestion-section {
+  background: #08264d;
+  color: #ffffff;
+  border: 1px solid #145da0;
+}
+
+.suggestion-section h2 {
+  color: #ffffff;
+}
+
+#suggestion {
+  background: #103968;
+  color: #ffffff;
+  border: 1px solid #245b91;
+}
+
+
+/* FORECAST */
+
+.forecast-section {
+  background: #08264d;
+  color: #ffffff;
+  border: 1px solid #145da0;
+}
+
+.forecast-section h2 {
+  color: #ffffff;
+}
+
+.forecast-card {
+  background: #061e40;
+  color: #ffffff;
+  border: 1px solid #245b91;
+}
+
+.forecast-card div {
+  color: #ffffff;
+}
+
+.forecast-card .temp {
+  color: #ffffff;
+}
+
+
+/* MAP BUTTONS */
+
+.map-buttons button {
+  background: #1765d1;
+  color: #ffffff;
+}
+
+.map-buttons button:hover {
+  background: #0d4fae;
+}
+
+
+/* SEARCH INPUT */
+
+.search-box input {
+  background: #ffffff;
+  color: #17243a;
+}
+
+.search-box input::placeholder {
+  color: #64748b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .weather-summary {
+    flex-direction: column;
+  }
+
+}
+
+/* BRAND NAME FIX */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  color: #0b1f3a !important;
+}
+
+.brand-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0b1f3a;
+  white-space: nowrap;
+}
+
+.brand-name span {
+  color: #00b8d9;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 14px;
+  color: #526780 !important;
+}
+
+/* =================================
+   CLIMATE 365 WEATHER MAP
+================================= */
+
+.map-section {
+    background: #ffffff;
+    color: #17243a;
+    padding: 22px;
+    margin: 25px auto;
+    border-radius: 18px;
+    max-width: 1100px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* MAP HEADER */
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.map-header h2 {
+    color: #0b1f3a;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.map-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* MAP BUTTONS */
+
+.map-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.map-controls button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #1765d1;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.map-controls button:hover {
+    background: #0b4da8;
+}
+
+/* MAP */
+
+#weatherMap {
+    width: 100%;
+    height: 550px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #cbd5e1;
+}
+
+/* LEGEND */
+
+.weather-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    color: #334155;
+    font-size: 14px;
+}
+
+.weather-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.legend.green {
+    background: #22c55e;
+}
+
+.legend.orange {
+    background: #f97316;
+}
+
+.legend.red {
+    background: #dc2626;
+}
+
+/* MAP NOTE */
+
+.map-note {
+    color: #64748b;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #weatherMap {
+        height: 400px;
+    }
+
+    .map-controls button {
+        flex: 1;
+    }
+
+    .map-header h2 {
+        font-size: 20px;
+    }
+
+}

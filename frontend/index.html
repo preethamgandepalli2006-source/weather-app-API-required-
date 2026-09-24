@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>CLIMATE 365 | Your Weather. Every Day.</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+</head>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+ <div class="logo">
+  <div class="brand-name">
+    🌍 CLIMATE <span>365</span>
+  </div>
+
+  <p>Your Weather. Every Day.</p>
+</div>
+</div>
+
+    <div class="search-box">
+
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="Search city..."
+      />
+
+      <button id="searchBtn">
+        Search
+      </button>
+
+      <button id="locationBtn">
+        📍 My Location
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- WEATHER SUMMARY -->
+    <section class="weather-summary">
+
+      <div class="weather-main">
+
+        <p id="city">
+          Loading location...
+        </p>
+
+        <h1>
+          <span id="temperature">--</span>°C
+        </h1>
+
+        <p id="condition">
+          Loading weather...
+        </p>
+
+      </div>
+
+
+      <div class="weather-details">
+
+        <div class="detail-card">
+          <span>💧 Humidity</span>
+          <strong id="humidity">--%</strong>
+        </div>
+
+        <div class="detail-card">
+          <span>🌬️ Wind</span>
+          <strong id="wind">-- km/h</strong>
+        </div>
+
+        <div class="detail-card">
+          <span>🌡️ Feels Like</span>
+          <strong id="feelsLike">--°C</strong>
+        </div>
+
+        <div class="detail-card">
+          <span>🌧️ Rain</span>
+          <strong id="rain">-- mm</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+   <!-- CLIMATE 365 WEATHER MAP -->
+
+<section class="map-section">
+
+    <div class="map-header">
+
+        <div>
+            <h2>🛰️ CLIMATE 365 Weather Map</h2>
+
+            <p>
+                Live Rain Radar, Temperature and Satellite View
+            </p>
+        </div>
+
+    </div>
+
+    <!-- MAP CONTROLS -->
+
+    <div class="map-controls">
+
+        <button id="normalMapBtn">
+            🗺️ Normal Map
+        </button>
+
+        <button id="satelliteMapBtn">
+            🛰️ Satellite
+        </button>
+
+        <button id="rainRadarBtn">
+            🌧️ Rain Radar
+        </button>
+
+        <button id="tempZoneBtn">
+            🌡️ Temperature Zones
+        </button>
+
+    </div>
+
+    <!-- WEATHER LEGEND -->
+
+    <div class="weather-legend">
+
+        <span>
+            <i class="legend green"></i>
+            Normal
+        </span>
+
+        <span>
+            <i class="legend orange"></i>
+            Hot / Heavy Rain
+        </span>
+
+        <span>
+            <i class="legend red"></i>
+            Very Hot / Intense Rain
+        </span>
+
+    </div>
+
+    <!-- MAP -->
+
+    <div id="weatherMap"></div>
+
+    <p class="map-note">
+    Click anywhere on the map to view weather details for that location.
+</p>
+
+</section>
+      <div id="weatherMap"></div>
+
+      <p class="map-note">
+        Click anywhere on the map to view weather for that location.
+      </p>
+
+    </section>
+
+
+    <!-- SMART SUGGESTION -->
+    <section class="suggestion-section">
+
+      <h2>🤖 Smart Weather Insight</h2>
+
+      <div id="suggestion">
+        Weather suggestion will appear here.
+      </div>
+
+    </section>
+
+
+    <!-- FORECAST -->
+    <section class="forecast-section">
+
+      <h2>📅 CLIMATE 365 — 7-Day Forecast</h2>
+
+      <div id="forecastContainer">
+        Loading forecast...
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- LEAFLET MAP JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- OUR JAVASCRIPT -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
